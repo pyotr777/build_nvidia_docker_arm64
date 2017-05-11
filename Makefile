@@ -36,7 +36,8 @@ DOCKER_BUILD     := $(NV_DOCKER) build --build-arg USER_ID="$(shell id -u)" \
                                        --build-arg PKG_NAME="$(PKG_NAME)" \
                                        --build-arg PKG_VERS="$(PKG_VERS)" \
                                        --build-arg PKG_REV="$(PKG_REV)" \
-                                       --build-arg PKG_ARCH="$(PKG_ARCH)"
+                                       --build-arg PKG_ARCH="$(PKG_ARCH)" \
+                                       --no-cache
 
 .PHONY: all build install uninstall clean distclean tarball deb rpm
 
