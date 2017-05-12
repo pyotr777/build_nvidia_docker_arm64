@@ -1,0 +1,9 @@
+FROM pyotr777/aarch64-golang:1.7.4
+
+ADD host_cuda/libshare.tgz /
+
+RUN ls -l /usr/share/doc/
+RUN ls -l /usr/share/doc/cuda-cudart-dev-8-0
+RUN ls -l /usr/lib
+
+CMD /bin/bash

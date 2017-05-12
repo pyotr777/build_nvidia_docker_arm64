@@ -4,4 +4,4 @@
 !Makefile
 !Dockerfile*
 !*.log
-
+!*.sh
