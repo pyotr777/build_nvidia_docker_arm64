@@ -2,209 +2,209 @@ Sending build context to Docker daemon 557.1 kBSending build context to Docker 
 Step 1 : FROM pyotr777/aarch64-golang:1.7.4
  ---> 0b11f744136f
 Step 2 : RUN NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 &&     NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80 &&     apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub &&     apt-key adv --export --no-emit-version -a $NVIDIA_GPGKEY_FPR | tail -n +2 > cudasign.pub &&     echo "$NVIDIA_GPGKEY_SUM  cudasign.pub" | sha256sum -c --strict - && rm cudasign.pub &&     echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64 /" > /etc/apt/sources.list.d/cuda.list
- ---> Running in e79672a1fec3
-Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.GT93xwhfPO --no-auto-check-trustdb --trust-model always --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub
+ ---> Running in dc84bc8158c7
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.tbQYpgBvO6 --no-auto-check-trustdb --trust-model always --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub
 [91mgpg: key 7FA2AF80: public key "cudatools <cudatools@nvidia.com>" imported
 gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)
 [0mcudasign.pub: OK
- ---> c45a31ea7d10
-Removing intermediate container e79672a1fec3
+ ---> 6c6296dc7a2a
+Removing intermediate container dc84bc8158c7
 Step 3 : ADD libsharecuda.tgz /
- ---> 159f7b6b639a
-Removing intermediate container 6009553ca5a8
+ ---> f5e5f29bf52f
+Removing intermediate container f001acfa6ff0
 Step 4 : RUN ls -l /usr/share/doc/
- ---> Running in a2f2ba6568f9
+ ---> Running in 5a860b26d6f5
 total 656
-drwxr-xr-x 2 root root 4096 May 12 09:40 acl
-drwxr-xr-x 3 root root 4096 May 12 09:40 adduser
-drwxr-xr-x 3 root root 4096 May 12 09:40 apt
-drwxr-xr-x 2 root root 4096 May 12 09:40 base-files
-drwxr-xr-x 2 root root 4096 May 12 09:40 base-passwd
-drwxr-xr-x 2 root root 4096 May 12 09:40 bash
-drwxr-xr-x 6 root root 4096 May 12 09:40 binutils
-drwxr-xr-x 2 root root 4096 May 12 09:40 bsdutils
-drwxr-xr-x 2 root root 4096 May 12 09:40 build-essential
-drwxr-xr-x 2 root root 4096 May 12 09:40 bzip2
-drwxr-xr-x 2 root root 4096 May 12 09:40 bzr
-drwxr-xr-x 3 root root 4096 May 12 09:40 ca-certificates
-drwxr-xr-x 2 root root 4096 May 12 09:40 coreutils
-drwxr-xr-x 2 root root 4096 May 12 09:40 cpp
+drwxr-xr-x 2 root root 4096 May 12 09:47 acl
+drwxr-xr-x 3 root root 4096 May 12 09:47 adduser
+drwxr-xr-x 3 root root 4096 May 12 09:47 apt
+drwxr-xr-x 2 root root 4096 May 12 09:47 base-files
+drwxr-xr-x 2 root root 4096 May 12 09:47 base-passwd
+drwxr-xr-x 2 root root 4096 May 12 09:47 bash
+drwxr-xr-x 6 root root 4096 May 12 09:47 binutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 bsdutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 build-essential
+drwxr-xr-x 2 root root 4096 May 12 09:47 bzip2
+drwxr-xr-x 2 root root 4096 May 12 09:47 bzr
+drwxr-xr-x 3 root root 4096 May 12 09:47 ca-certificates
+drwxr-xr-x 2 root root 4096 May 12 09:47 coreutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 cpp
 lrwxrwxrwx 1 root root   12 Dec 26  2014 cpp-4.9 -> gcc-4.9-base
 drwxr-xr-x 2 root root 4096 Apr 28 09:02 cuda-cudart-dev-8-0
 drwxr-xr-x 2 root root 4096 Apr 28 09:02 cuda-misc-headers-8-0
-drwxr-xr-x 2 root root 4096 May 12 09:40 curl
-drwxr-xr-x 2 root root 4096 May 12 09:40 dash
-drwxr-xr-x 2 root root 4096 May 12 09:40 debconf
+drwxr-xr-x 2 root root 4096 May 12 09:47 curl
+drwxr-xr-x 2 root root 4096 May 12 09:47 dash
+drwxr-xr-x 2 root root 4096 May 12 09:47 debconf
 lrwxrwxrwx 1 root root    7 Mar 19  2015 debconf-i18n -> debconf
-drwxr-xr-x 2 root root 4096 May 12 09:40 debian-archive-keyring
-drwxr-xr-x 2 root root 4096 May 12 09:40 debianutils
-drwxr-xr-x 2 root root 4096 May 12 09:40 diffutils
-drwxr-xr-x 2 root root 4096 May 12 09:40 dmsetup
-drwxr-xr-x 2 root root 4096 May 12 09:40 dpkg
-drwxr-xr-x 2 root root 4096 May 12 09:40 dpkg-dev
-drwxr-xr-x 2 root root 4096 May 12 09:40 e2fslibs
-drwxr-xr-x 2 root root 4096 May 12 09:40 e2fsprogs
-drwxr-xr-x 2 root root 4096 May 12 09:40 findutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 debian-archive-keyring
+drwxr-xr-x 2 root root 4096 May 12 09:47 debianutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 diffutils
+drwxr-xr-x 2 root root 4096 May 12 09:47 dmsetup
+drwxr-xr-x 2 root root 4096 May 12 09:47 dpkg
+drwxr-xr-x 2 root root 4096 May 12 09:47 dpkg-dev
+drwxr-xr-x 2 root root 4096 May 12 09:47 e2fslibs
+drwxr-xr-x 2 root root 4096 May 12 09:47 e2fsprogs
+drwxr-xr-x 2 root root 4096 May 12 09:47 findutils
 lrwxrwxrwx 1 root root    3 Feb 25  2015 g++ -> cpp
 lrwxrwxrwx 1 root root   12 Dec 26  2014 g++-4.9 -> gcc-4.9-base
 lrwxrwxrwx 1 root root    3 Feb 25  2015 gcc -> cpp
-drwxr-xr-x 2 root root 4096 May 12 09:40 gcc-4.8-base
+drwxr-xr-x 2 root root 4096 May 12 09:47 gcc-4.8-base
 lrwxrwxrwx 1 root root   12 Dec 26  2014 gcc-4.9 -> gcc-4.9-base
-drwxr-xr-x 7 root root 4096 May 12 09:40 gcc-4.9-base
-drwxr-xr-x 4 root root 4096 May 12 09:40 git
-drwxr-xr-x 2 root root 4096 May 12 09:40 git-man
-drwxr-xr-x 3 root root 4096 May 12 09:40 gnupg
-drwxr-xr-x 2 root root 4096 May 12 09:40 gpgv
-drwxr-xr-x 2 root root 4096 May 12 09:40 grep
-drwxr-xr-x 2 root root 4096 May 12 09:40 gzip
-drwxr-xr-x 2 root root 4096 May 12 09:40 hostname
-drwxr-xr-x 2 root root 4096 May 12 09:40 inetutils-ping
-drwxr-xr-x 2 root root 4096 May 12 09:40 init
-drwxr-xr-x 2 root root 4096 May 12 09:40 initscripts
-drwxr-xr-x 2 root root 4096 May 12 09:40 insserv
-drwxr-xr-x 2 root root 4096 May 12 09:40 iproute2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libacl1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libapt-pkg4.12
+drwxr-xr-x 7 root root 4096 May 12 09:47 gcc-4.9-base
+drwxr-xr-x 4 root root 4096 May 12 09:47 git
+drwxr-xr-x 2 root root 4096 May 12 09:47 git-man
+drwxr-xr-x 3 root root 4096 May 12 09:47 gnupg
+drwxr-xr-x 2 root root 4096 May 12 09:47 gpgv
+drwxr-xr-x 2 root root 4096 May 12 09:47 grep
+drwxr-xr-x 2 root root 4096 May 12 09:47 gzip
+drwxr-xr-x 2 root root 4096 May 12 09:47 hostname
+drwxr-xr-x 2 root root 4096 May 12 09:47 inetutils-ping
+drwxr-xr-x 2 root root 4096 May 12 09:47 init
+drwxr-xr-x 2 root root 4096 May 12 09:47 initscripts
+drwxr-xr-x 2 root root 4096 May 12 09:47 insserv
+drwxr-xr-x 2 root root 4096 May 12 09:47 iproute2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libacl1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libapt-pkg4.12
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libatomic1 -> gcc-4.9-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 libattr1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libaudit-common
-drwxr-xr-x 2 root root 4096 May 12 09:40 libaudit1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libblkid1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libbsd0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libbz2-1.0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libc-bin
-drwxr-xr-x 2 root root 4096 May 12 09:40 libc-dev-bin
-drwxr-xr-x 2 root root 4096 May 12 09:40 libc6
-drwxr-xr-x 2 root root 4096 May 12 09:40 libc6-dev
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcap2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcap2-bin
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcloog-isl4
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcomerr2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcryptsetup4
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcurl3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libcurl3-gnutls
-drwxr-xr-x 2 root root 4096 May 12 09:40 libdb5.3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libdebconfclient0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libdevmapper1.02.1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libdpkg-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libedit2
-drwxr-xr-x 2 root root 4096 May 12 09:40 liberror-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libexpat1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libffi6
+drwxr-xr-x 2 root root 4096 May 12 09:47 libattr1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libaudit-common
+drwxr-xr-x 2 root root 4096 May 12 09:47 libaudit1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libblkid1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libbsd0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libbz2-1.0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libc-bin
+drwxr-xr-x 2 root root 4096 May 12 09:47 libc-dev-bin
+drwxr-xr-x 2 root root 4096 May 12 09:47 libc6
+drwxr-xr-x 2 root root 4096 May 12 09:47 libc6-dev
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcap2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcap2-bin
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcloog-isl4
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcomerr2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcryptsetup4
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcurl3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libcurl3-gnutls
+drwxr-xr-x 2 root root 4096 May 12 09:47 libdb5.3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libdebconfclient0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libdevmapper1.02.1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libdpkg-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libedit2
+drwxr-xr-x 2 root root 4096 May 12 09:47 liberror-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libexpat1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libffi6
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libgcc-4.9-dev -> gcc-4.9-base
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libgcc1 -> gcc-4.9-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgcrypt20
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgdbm3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgmp10
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgnutls-deb0-28
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgcrypt20
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgdbm3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgmp10
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgnutls-deb0-28
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libgomp1 -> gcc-4.9-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgpg-error0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libgssapi-krb5-2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgpg-error0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libgssapi-krb5-2
 lrwxrwxrwx 1 root root   10 Nov  6  2016 libhogweed2 -> libnettle4
-drwxr-xr-x 2 root root 4096 May 12 09:40 libicu52
-drwxr-xr-x 2 root root 4096 May 12 09:40 libidn11
-drwxr-xr-x 2 root root 4096 May 12 09:40 libisl10
+drwxr-xr-x 2 root root 4096 May 12 09:47 libicu52
+drwxr-xr-x 2 root root 4096 May 12 09:47 libidn11
+drwxr-xr-x 2 root root 4096 May 12 09:47 libisl10
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libitm1 -> gcc-4.9-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 libk5crypto3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libkeyutils1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libkmod2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libkrb5-3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libkrb5support0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libldap-2.4-2
-drwxr-xr-x 2 root root 4096 May 12 09:40 liblocale-gettext-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 liblzma5
-drwxr-xr-x 2 root root 4096 May 12 09:40 libmount1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libmpc3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libmpfr4
+drwxr-xr-x 2 root root 4096 May 12 09:47 libk5crypto3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libkeyutils1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libkmod2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libkrb5-3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libkrb5support0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libldap-2.4-2
+drwxr-xr-x 2 root root 4096 May 12 09:47 liblocale-gettext-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 liblzma5
+drwxr-xr-x 2 root root 4096 May 12 09:47 libmount1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libmpc3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libmpfr4
 lrwxrwxrwx 1 root root    9 Sep 19  2014 libncurses5 -> libtinfo5
 lrwxrwxrwx 1 root root    9 Sep 19  2014 libncursesw5 -> libtinfo5
-drwxr-xr-x 2 root root 4096 May 12 09:40 libnettle4
-drwxr-xr-x 3 root root 4096 May 12 09:40 libp11-kit0
-drwxr-xr-x 3 root root 4096 May 12 09:40 libpam-modules
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpam-modules-bin
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpam-runtime
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpam0g
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpcre3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libprocps3
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpsl0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpython-stdlib
-drwxr-xr-x 2 root root 4096 May 12 09:40 libpython2.7-minimal
+drwxr-xr-x 2 root root 4096 May 12 09:47 libnettle4
+drwxr-xr-x 3 root root 4096 May 12 09:47 libp11-kit0
+drwxr-xr-x 3 root root 4096 May 12 09:47 libpam-modules
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpam-modules-bin
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpam-runtime
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpam0g
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpcre3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libprocps3
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpsl0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpython-stdlib
+drwxr-xr-x 2 root root 4096 May 12 09:47 libpython2.7-minimal
 lrwxrwxrwx 1 root root   20 Aug 13  2016 libpython2.7-stdlib -> libpython2.7-minimal
-drwxr-xr-x 3 root root 4096 May 12 09:40 libreadline6
-drwxr-xr-x 2 root root 4096 May 12 09:40 librtmp1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsasl2-2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsasl2-modules-db
-drwxr-xr-x 2 root root 4096 May 12 09:40 libselinux1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsemanage-common
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsemanage1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsepol1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libslang2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsmartcols1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsqlite3-0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libss2
-drwxr-xr-x 2 root root 4096 May 12 09:40 libssh2-1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libssl1.0.0
+drwxr-xr-x 3 root root 4096 May 12 09:47 libreadline6
+drwxr-xr-x 2 root root 4096 May 12 09:47 librtmp1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsasl2-2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsasl2-modules-db
+drwxr-xr-x 2 root root 4096 May 12 09:47 libselinux1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsemanage-common
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsemanage1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsepol1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libslang2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsmartcols1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsqlite3-0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libss2
+drwxr-xr-x 2 root root 4096 May 12 09:47 libssh2-1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libssl1.0.0
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libstdc++-4.9-dev -> gcc-4.9-base
 lrwxrwxrwx 1 root root   12 Dec 26  2014 libstdc++6 -> gcc-4.9-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 libsystemd0
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtasn1-6
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtext-charwidth-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtext-iconv-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtext-wrapi18n-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtimedate-perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 libtinfo5
-drwxr-xr-x 2 root root 4096 May 12 09:40 libudev1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libusb-0.1-4
-drwxr-xr-x 2 root root 4096 May 12 09:40 libustr-1.0-1
-drwxr-xr-x 2 root root 4096 May 12 09:40 libuuid1
-drwxr-xr-x 2 root root 4096 May 12 09:40 linux-libc-dev
-drwxr-xr-x 2 root root 4096 May 12 09:40 login
-drwxr-xr-x 2 root root 4096 May 12 09:40 lsb-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 make
-drwxr-xr-x 3 root root 4096 May 12 09:40 mawk
-drwxr-xr-x 2 root root 4096 May 12 09:40 mime-support
-drwxr-xr-x 3 root root 4096 May 12 09:40 mount
-drwxr-xr-x 2 root root 4096 May 12 09:40 multiarch-support
-drwxr-xr-x 2 root root 4096 May 12 09:40 ncurses-base
-drwxr-xr-x 2 root root 4096 May 12 09:40 ncurses-bin
-drwxr-xr-x 2 root root 4096 May 12 09:40 netbase
-drwxr-xr-x 2 root root 4096 May 12 09:40 openssh-client
-drwxr-xr-x 3 root root 4096 May 12 09:40 openssl
-drwxr-xr-x 3 root root 4096 May 12 09:40 passwd
-drwxr-xr-x 2 root root 4096 May 12 09:40 patch
-drwxr-xr-x 2 root root 4096 May 12 09:40 perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libsystemd0
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtasn1-6
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtext-charwidth-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtext-iconv-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtext-wrapi18n-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtimedate-perl
+drwxr-xr-x 2 root root 4096 May 12 09:47 libtinfo5
+drwxr-xr-x 2 root root 4096 May 12 09:47 libudev1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libusb-0.1-4
+drwxr-xr-x 2 root root 4096 May 12 09:47 libustr-1.0-1
+drwxr-xr-x 2 root root 4096 May 12 09:47 libuuid1
+drwxr-xr-x 2 root root 4096 May 12 09:47 linux-libc-dev
+drwxr-xr-x 2 root root 4096 May 12 09:47 login
+drwxr-xr-x 2 root root 4096 May 12 09:47 lsb-base
+drwxr-xr-x 2 root root 4096 May 12 09:47 make
+drwxr-xr-x 3 root root 4096 May 12 09:47 mawk
+drwxr-xr-x 2 root root 4096 May 12 09:47 mime-support
+drwxr-xr-x 3 root root 4096 May 12 09:47 mount
+drwxr-xr-x 2 root root 4096 May 12 09:47 multiarch-support
+drwxr-xr-x 2 root root 4096 May 12 09:47 ncurses-base
+drwxr-xr-x 2 root root 4096 May 12 09:47 ncurses-bin
+drwxr-xr-x 2 root root 4096 May 12 09:47 netbase
+drwxr-xr-x 2 root root 4096 May 12 09:47 openssh-client
+drwxr-xr-x 3 root root 4096 May 12 09:47 openssl
+drwxr-xr-x 3 root root 4096 May 12 09:47 passwd
+drwxr-xr-x 2 root root 4096 May 12 09:47 patch
+drwxr-xr-x 2 root root 4096 May 12 09:47 perl
 lrwxrwxrwx 1 root root    4 Jul 24  2016 perl-base -> perl
-drwxr-xr-x 2 root root 4096 May 12 09:40 perl-modules
-drwxr-xr-x 3 root root 4096 May 12 09:40 procps
-drwxr-xr-x 4 root root 4096 May 12 09:40 python
-drwxr-xr-x 2 root root 4096 May 12 09:40 python-bzrlib
-drwxr-xr-x 2 root root 4096 May 12 09:40 python-configobj
-drwxr-xr-x 2 root root 4096 May 12 09:40 python-minimal
-drwxr-xr-x 2 root root 4096 May 12 09:40 python-six
-drwxr-xr-x 2 root root 4096 May 12 09:40 python2.7
-drwxr-xr-x 2 root root 4096 May 12 09:40 python2.7-minimal
-drwxr-xr-x 2 root root 4096 May 12 09:40 readline-common
-drwxr-xr-x 3 root root 4096 May 12 09:40 sed
-drwxr-xr-x 2 root root 4096 May 12 09:40 sensible-utils
-drwxr-xr-x 2 root root 4096 May 12 09:40 startpar
-drwxr-xr-x 2 root root 4096 May 12 09:40 systemd
-drwxr-xr-x 2 root root 4096 May 12 09:40 systemd-sysv
-drwxr-xr-x 2 root root 4096 May 12 09:40 sysv-rc
-drwxr-xr-x 2 root root 4096 May 12 09:40 sysvinit-utils
-drwxr-xr-x 2 root root 4096 May 12 09:40 tar
-drwxr-xr-x 2 root root 4096 May 12 09:40 tzdata
+drwxr-xr-x 2 root root 4096 May 12 09:47 perl-modules
+drwxr-xr-x 3 root root 4096 May 12 09:47 procps
+drwxr-xr-x 4 root root 4096 May 12 09:47 python
+drwxr-xr-x 2 root root 4096 May 12 09:47 python-bzrlib
+drwxr-xr-x 2 root root 4096 May 12 09:47 python-configobj
+drwxr-xr-x 2 root root 4096 May 12 09:47 python-minimal
+drwxr-xr-x 2 root root 4096 May 12 09:47 python-six
+drwxr-xr-x 2 root root 4096 May 12 09:47 python2.7
+drwxr-xr-x 2 root root 4096 May 12 09:47 python2.7-minimal
+drwxr-xr-x 2 root root 4096 May 12 09:47 readline-common
+drwxr-xr-x 3 root root 4096 May 12 09:47 sed
+drwxr-xr-x 2 root root 4096 May 12 09:47 sensible-utils
+drwxr-xr-x 2 root root 4096 May 12 09:47 startpar
+drwxr-xr-x 2 root root 4096 May 12 09:47 systemd
+drwxr-xr-x 2 root root 4096 May 12 09:47 systemd-sysv
+drwxr-xr-x 2 root root 4096 May 12 09:47 sysv-rc
+drwxr-xr-x 2 root root 4096 May 12 09:47 sysvinit-utils
+drwxr-xr-x 2 root root 4096 May 12 09:47 tar
+drwxr-xr-x 2 root root 4096 May 12 09:47 tzdata
 lrwxrwxrwx 1 root root    8 Jan  7 03:35 udev -> libudev1
-drwxr-xr-x 4 root root 4096 May 12 09:40 util-linux
-drwxr-xr-x 2 root root 4096 May 12 09:40 wget
-drwxr-xr-x 3 root root 4096 May 12 09:40 xz-utils
-drwxr-xr-x 2 root root 4096 May 12 09:40 zlib1g
- ---> eb816d585ea5
-Removing intermediate container a2f2ba6568f9
+drwxr-xr-x 4 root root 4096 May 12 09:47 util-linux
+drwxr-xr-x 2 root root 4096 May 12 09:47 wget
+drwxr-xr-x 3 root root 4096 May 12 09:47 xz-utils
+drwxr-xr-x 2 root root 4096 May 12 09:47 zlib1g
+ ---> 74a974efcb91
+Removing intermediate container 5a860b26d6f5
 Step 5 : RUN objcopy --redefine-sym memcpy=memcpy@GLIBC_2.2.5 /usr/local/cuda-8.0/lib64/libcudart_static.a
- ---> Running in a358481b3da9
- ---> 7a69bfc09b3e
-Removing intermediate container a358481b3da9
-Step 6 : RUN NVIDIA_GDK_SUM=1e32e58f69fe29ee67b845233e7aa9347f37994463252bccbc8bfc8a7104ab5a &&     wget -O gdk.run -q http://developer.download.nvidia.com/compute/cuda/8.0/Prod/local_installers/cuda_352_39_gdk_linux.run &&     echo "$NVIDIA_GDK_SUM  gdk.run" | sha256sum -c --strict - &&     chmod +x gdk.run && ./gdk.run --silent && rm gdk.run
- ---> Running in 1174dd5f6258
+ ---> Running in ce0aa58b65db
+ ---> d98221164af1
+Removing intermediate container ce0aa58b65db
+Step 6 : RUN NVIDIA_GDK_SUM=1e32e58f69fe29ee67b845233e7aa9347f37994463252bccbc8bfc8a7104ab5a &&     wget -O gdk.run -q http://developer.download.nvidia.com/compute/cuda/8.0/Prod/local_installers/cuda_352_39_gdk_linux.run
+ ---> Running in ac681f0f55f5
 Makefile:47: recipe for target 'build' failed
