@@ -1,0 +1,46 @@
+Sending build context to Docker daemon 557.1 kBSending build context to Docker daemon 668.7 kB
+Step 1 : FROM pyotr777/aarch64-golang:1.7.4
+ ---> 0b11f744136f
+Step 2 : RUN NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 &&     NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80 &&     apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub &&     apt-key adv --export --no-emit-version -a $NVIDIA_GPGKEY_FPR | tail -n +2 > cudasign.pub &&     echo "$NVIDIA_GPGKEY_SUM  cudasign.pub" | sha256sum -c --strict - && rm cudasign.pub &&     echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64 /" > /etc/apt/sources.list.d/cuda.list
+ ---> Running in 9e01391dfc73
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.DE0a6g0hcj --no-auto-check-trustdb --trust-model always --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub
+[91mgpg: key 7FA2AF80: public key "cudatools <cudatools@nvidia.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+[0mcudasign.pub: OK
+ ---> 2547be583a46
+Removing intermediate container 9e01391dfc73
+Step 3 : RUN apt-get update && apt-get install -y         cuda-cudart-cross-aarch64-8-0         cuda-misc-headers-cross-aarch64-8-0         cuda-nvml-cross-aarch64-8-0 &&     rm -rf /var/lib/apt/lists/*
+ ---> Running in 1af912b4e664
+Get:1 http://security.debian.org jessie/updates InRelease [63.1 kB]
+Ign http://developer.download.nvidia.com  InRelease
+Get:2 http://developer.download.nvidia.com  Release.gpg [819 B]
+Get:3 http://developer.download.nvidia.com  Release [564 B]
+Get:4 http://security.debian.org jessie/updates/main arm64 Packages [489 kB]
+Get:5 http://developer.download.nvidia.com  Packages [154 kB]
+Ign http://deb.debian.org jessie InRelease
+Get:6 http://deb.debian.org jessie-updates InRelease [145 kB]
+Get:7 http://deb.debian.org jessie-backports InRelease [166 kB]
+Get:8 http://deb.debian.org jessie Release.gpg [2373 B]
+Get:9 http://deb.debian.org jessie Release [148 kB]
+Get:10 http://deb.debian.org jessie-updates/main arm64 Packages [17.4 kB]
+Get:11 http://deb.debian.org jessie-backports/main arm64 Packages [1090 kB]
+Get:12 http://deb.debian.org jessie/main arm64 Packages [8559 kB]
+Fetched 10.8 MB in 5s (2030 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ cuda-cudart-cross-aarch64-8-0 : Depends: cuda-license-8-0 but it is not installable
+                                 Depends: cuda-driver-cross-aarch64-8-0 but it is not going to be installed
+ cuda-misc-headers-cross-aarch64-8-0 : Depends: cuda-license-8-0 but it is not installable
+ cuda-nvml-cross-aarch64-8-0 : Depends: cuda-license-8-0 but it is not installable
+[91mE[0m[91m: Unable to correct problems, you have held broken packages.
+[0mMakefile:47: recipe for target 'build' failed
